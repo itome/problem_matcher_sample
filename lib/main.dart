@@ -11,7 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      // This line violates to prefer_single_quotes
+      title: "Flutter Demo",
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -26,6 +27,18 @@ class MyApp extends StatelessWidget {
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
+  }
+
+  int? invalidNullAwareOperator(String s) {
+    // This line violates invalid_null_aware_operator
+    return s?.length;
+  }
+
+  void invalidAssignment() {
+    int i = 0;
+    // This line violates invalid_assignment
+    String s = i;
+    debugPrint(s);
   }
 }
 
